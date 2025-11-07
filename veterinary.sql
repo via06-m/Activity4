@@ -56,5 +56,15 @@ INSERT INTO Owners (ownerid, firstname, lastname, address, phone, email) VALUES
 (9, 'Linda', 'Rodriguez', '369 Aspen St', '555-8642', 'linda.rodriguez@example.com'),
 (10, 'Robert', 'Hernandez', '159 Fir St', '555-9753', 'robert.hernandez@example.com');
 
-
+INSERT INTO animals (animalid, name, species, breed, age, ownerid) VALUES
+(1, 'Buddy', 'Dog', 'Golden Retriever', 3, 1),
+(2, 'Mittens', 'Cat', 'Siamese', 2, 2),
+(3, 'Charlie', 'Dog', 'Beagle', 4, 3),
+(4, 'Luna', 'Cat', 'Maine Coon', 1, 4),
+(5, 'Max', 'Dog', 'Bulldog', 5, 5),
+(6, 'Daisy', 'Cat', 'Persian', 3, 6),
+(7, 'Rocky', 'Dog', 'Boxer', 2, 7),
+(8, 'Coco', 'Cat', 'Bengal', 4, 8),
+(9, 'Jack', 'Dog', 'Poodle', 6, 9),
+(10, 'Bella', 'Cat', 'Ragdoll', 2, 10);
 
