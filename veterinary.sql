@@ -68,7 +68,7 @@ VALUES
 (6, 'David', 'Wilson', '987 Birch St', '555-9876', 'david.wilson@example.com'),
 (7, 'Laura', 'Garcia', '147 Spruce St', '555-2468', 'laura.garcia@example.com'),
 (8, 'James', 'Martinez', '258 Willow St', '555-1357', 'james.martinez@example.com'),
-(9, 'Linda', 'Rodriguez', '369 Aspen St', '555-8642', 'linda.rodriguez@example.com'),
+(9, 'Maria', 'Rodriguez', '369 Aspen St', '555-8642', 'maria.rodriguez@example.com'),
 (10, 'Robert', 'Hernandez', '159 Fir St', '555-9753', 'robert.hernandez@example.com');
 
 INSERT INTO animals (animalid, name, species, breed, dateofbirth, gender, color, ownerid) 
@@ -143,3 +143,6 @@ UPDATE doctors SET dlastname = 'Reyes-Gonzales' WHERE dfirstname = 'Dr.Sofia' AN
 SELECT DISTINCT species FROM animals;
 
 SELECT SUM(totalamount) AS total_sales FROM invoices;
+
+SELECT COUNT(*) AS total_appointments FROM appointments a JOIN animals an ON a.animalid = an.animalid
+JOIN Owners o ON an.ownerid = o.ownerid WHERE o.ofirstname = 'Jane';
