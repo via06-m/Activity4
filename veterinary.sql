@@ -1,3 +1,4 @@
+
 CREATE TABLE Owners (
     ownerid INT PRIMARY KEY,
     firstname VARCHAR(50),
