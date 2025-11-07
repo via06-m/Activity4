@@ -68,18 +68,17 @@ INSERT INTO Owners (ownerid, ofirstname, olastname, address, phone, email) VALUE
 (9, 'Linda', 'Rodriguez', '369 Aspen St', '555-8642', 'linda.rodriguez@example.com'),
 (10, 'Robert', 'Hernandez', '159 Fir St', '555-9753', 'robert.hernandez@example.com');
 
-INSERT INTO animals (animalid, name, species, breed, age, ownerid) 
-VALUES
-(1, 'Buddy', 'Dog', 'Golden Retriever', 3, 1),
-(2, 'Mittens', 'Cat', 'Siamese', 2, 2),
-(3, 'Charlie', 'Dog', 'Beagle', 4, 3),
-(4, 'Luna', 'Cat', 'Maine Coon', 1, 4),
-(5, 'Max', 'Dog', 'Bulldog', 5, 5),
-(6, 'Daisy', 'Cat', 'Persian', 3, 6),
-(7, 'Rocky', 'Dog', 'Boxer', 2, 7),
-(8, 'Coco', 'Cat', 'Bengal', 4, 8),
-(9, 'Jack', 'Dog', 'Poodle', 6, 9),
-(10, 'Bella', 'Cat', 'Ragdoll', 2, 10);
+INSERT INTO animals (animalid, name, species, breed, dateofbirth, gender, color, ownerid) VALUES
+(1, 'Buddy', 'Dog', 'Golden Retriever', '2018-05-20', 'Male', 'Golden', 1),
+(2, 'Mittens', 'Cat', 'Siamese', '2019-08-15', 'Female', 'Cream', 2),
+(3, 'Max', 'Dog', 'German Shepherd', '2017-11-30', 'Male', 'Black and Tan', 3),
+(4, 'Luna', 'Cat', 'Maine Coon', '2020-02-25', 'Female', 'Gray', 4),
+(5, 'Charlie', 'Dog', 'Beagle', '2016-03-15', 'Male', 'Tri-color', 5),
+(6, 'Daisy', 'Cat', 'Persian', '2018-07-10', 'Female', 'White', 6),
+(7, 'Rocky', 'Dog', 'Boxer', '2015-12-05', 'Male', 'Brindle', 7),
+(8, 'Coco', 'Cat', 'Bengal', '2019-04-20', 'Female', 'Spotted', 8),
+(9, 'Jack', 'Dog', 'Poodle', '2014-09-10', 'Male', 'Apricot', 9),
+(10, 'Bella', 'Cat', 'Ragdoll', '2020-01-25', 'Female', 'Blue', 10);
 
 INSERT INTO appointments (appointid, animalid, appointdate, reason) 
 VALUES
