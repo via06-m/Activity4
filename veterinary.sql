@@ -68,3 +68,14 @@ INSERT INTO animals (animalid, name, species, breed, age, ownerid) VALUES
 (9, 'Jack', 'Dog', 'Poodle', 6, 9),
 (10, 'Bella', 'Cat', 'Ragdoll', 2, 10);
 
+INSERT INTO appointments (appointid, animalid, appointdate, reason) VALUES
+(1, 1, '2023-10-01', 'Routine Checkup'),
+(2, 2, '2023-10-02', 'Vaccination'),
+(3, 3, '2023-10-03', 'Dental Cleaning'),
+(4, 4, '2023-10-04', 'Skin Allergy'),
+(5, 5, '2023-10-05', 'Ear Infection'),
+(6, 6, '2023-10-06', 'Routine Checkup'),
+(7, 7, '2023-10-07', 'Vaccination'),
+(8, 8, '2023-10-08', 'Dental Cleaning'),
+(9, 9, '2023-10-09', 'Skin Allergy'),
+(10, 10, '2023-10-10', 'Ear Infection');
