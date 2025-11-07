@@ -146,3 +146,7 @@ SELECT SUM(totalamount) AS total_sales FROM invoices;
 
 SELECT COUNT(*) AS total_appointments FROM appointments a JOIN animals an ON a.animalid = an.animalid
 JOIN Owners o ON an.ownerid = o.ownerid WHERE o.ofirstname = 'Jane';
+
+SELECT a.name, COUNT(*) AS appointment_count FROM appointments ap  JOIN animals a ON ap.animalid = a.animalid
+GROUP BY a.animalid, a.name ORDER BY appointment_count DESC
+LIMIT 1;
