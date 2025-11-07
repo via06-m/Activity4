@@ -74,7 +74,7 @@ VALUES
 INSERT INTO animals (animalid, name, species, breed, dateofbirth, gender, color, ownerid) 
 VALUES
 (1, 'Buddy', 'Dog', 'Golden Retriever', '2018-05-20', 'Male', 'Golden', 1),
-(2, 'Mittens', 'Cat', 'Siamese', '2019-08-15', 'Female', 'Cream', 2),
+(2, 'Simba', 'Cat', 'Siamese', '2019-08-15', 'Female', 'Cream', 2),
 (3, 'Max', 'Dog', 'German Shepherd', '2017-11-30', 'Male', 'Black and Tan', 3),
 (4, 'Luna', 'Cat', 'Maine Coon', '2020-02-25', 'Female', 'Gray', 4),
 (5, 'Charlie', 'Dog', 'Beagle', '2016-03-15', 'Male', 'Tri-color', 5),
@@ -135,3 +135,6 @@ VALUES
 ALTER TABLE Owners ADD COLUMN registereddate DATE;
 
 ALTER TABLE invoices RENAME COLUMN paymentdate TO paymenttime;
+
+DELETE FROM appointments 
+WHERE animalid = (SELECT animalid FROM animals WHERE name = 'Simba' AND species = 'Cat');
