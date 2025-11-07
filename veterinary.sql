@@ -34,3 +34,13 @@ CREATE TABLE invoices (
     paid BOOLEAN,
     FOREIGN KEY (appointid) REFERENCES appointments(appointid)
 );
+
+CREATE TABLE medical_records (
+    recordid INT PRIMARY KEY,
+    animalid INT,
+    visitdate DATE,
+    diagnosis VARCHAR(255),
+    treatment VARCHAR(255),
+    FOREIGN KEY (animalid) REFERENCES animals(animalid)
+);
+
