@@ -102,7 +102,7 @@ VALUES
 (1, 'Dr.Maria', 'Santos', 'General Veterinarian', '987-654-3210', 'maria@example.com'),
 (2, 'Dr.Antonio', 'Gonzales', 'Feline Specialist', '555-123-4567', 'antonio@example.com'),
 (3, 'Dr.Felipe', 'Luna', 'Orthopedic Specialist', '111-222-3333', 'felipe@example.com'),
-(4, 'Dr.Sofia', 'Reyes', 'Dermatology Specialist', '999-888-7777', 'sofia@xample.com'),
+(4, 'Dr.Sofia', 'Reyes', 'Dermatology Specialist', '999-888-7777', 'sofia@example.com'),
 (5, 'Dr.Luis', 'Torres', 'Surgery Specialist', '123-555-7777', 'luis@example.com'),
 (6, 'Dr.Carmen', 'Fernandez', 'Opthalmology Specialist', '333-222-1111', 'carmen@example.com');
 
@@ -136,6 +136,10 @@ ALTER TABLE Owners ADD COLUMN registereddate DATE;
 
 ALTER TABLE invoices RENAME COLUMN paymentdate TO paymenttime;
 
+DELETE FROM invoices WHERE appointid IN (
+    SELECT appointid FROM appointments 
+    WHERE animalid = (SELECT animalid FROM animals WHERE name = 'Simba' AND species = 'Cat')
+);
 DELETE FROM appointments WHERE animalid = (SELECT animalid FROM animals WHERE name = 'Simba' AND species = 'Cat');
 
 UPDATE doctors SET dlastname = 'Reyes-Gonzales' WHERE dfirstname = 'Dr.Sofia' AND dlastname = 'Reyes';
@@ -150,3 +154,5 @@ JOIN Owners o ON an.ownerid = o.ownerid WHERE o.ofirstname = 'Jane';
 SELECT a.name, COUNT(*) AS appointment_count FROM appointments ap  JOIN animals a ON ap.animalid = a.animalid
 GROUP BY a.animalid, a.name ORDER BY appointment_count DESC
 LIMIT 1;
+
+
