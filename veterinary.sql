@@ -50,13 +50,14 @@ CREATE TABLE invoices (
 CREATE TABLE medical_records (
     recordid INT PRIMARY KEY,
     animalid INT,
-    visitdate DATE,
+    recorddate DATE,
     diagnosis VARCHAR(255),
     treatment VARCHAR(255),
     FOREIGN KEY (animalid) REFERENCES animals(animalid)
 );
 
-INSERT INTO Owners (ownerid, ofirstname, olastname, address, phone, email) VALUES
+INSERT INTO Owners (ownerid, ofirstname, olastname, address, phone, email) 
+VALUES
 (1, 'John', 'Doe', '123 Elm St', '555-1234', 'john.doe@example.com'),
 (2, 'Jane', 'Smith', '456 Oak St', '555-5678', 'jane.smith@example.com'),
 (3, 'Emily', 'Johnson', '789 Pine St', '555-8765', 'emily.johnson@example.com'),
@@ -68,7 +69,8 @@ INSERT INTO Owners (ownerid, ofirstname, olastname, address, phone, email) VALUE
 (9, 'Linda', 'Rodriguez', '369 Aspen St', '555-8642', 'linda.rodriguez@example.com'),
 (10, 'Robert', 'Hernandez', '159 Fir St', '555-9753', 'robert.hernandez@example.com');
 
-INSERT INTO animals (animalid, name, species, breed, dateofbirth, gender, color, ownerid) VALUES
+INSERT INTO animals (animalid, name, species, breed, dateofbirth, gender, color, ownerid) 
+VALUES
 (1, 'Buddy', 'Dog', 'Golden Retriever', '2018-05-20', 'Male', 'Golden', 1),
 (2, 'Mittens', 'Cat', 'Siamese', '2019-08-15', 'Female', 'Cream', 2),
 (3, 'Max', 'Dog', 'German Shepherd', '2017-11-30', 'Male', 'Black and Tan', 3),
@@ -102,7 +104,7 @@ VALUES
 (5, 'Dr.Luis', 'Torres', 'Surgery Specialist', '123-555-7777', 'luis@example.com'),
 (6, 'Dr.Carmen', 'Fernandez', 'Opthalmology Specialist', '333-222-1111', 'carmen@example.com');
 
-INSERT INTO invoices(invoiceid, appointid, totalamount, paymentdate)
+INSERT INTO invoices (invoiceid, appointid, totalamount, paymentdate)
 VALUES
 (1, 1, 50.00, '09:30:00'),
 (2, 2, 75.00, '14:15:00'),
@@ -114,3 +116,16 @@ VALUES
 (8, 8, 150.00, '16:30:00'),
 (9, 9, 60.00, '14:45:00'),
 (10, 10, 40.00, '11:30:00');
+
+INSERT INTO medical_records (recordid, animalid, recorddate, doctorid, diagnosis, prescription, notes)
+VALUES 
+(1, 1, '2023-01-05 00:00:00', 1, 'Health check', 'N/A', 'Regular checkup, no issue detected'),
+(2, 2, '2023-01-10 00:00:00', 1, 'Vaccination', 'Vaccine X', 'Administered vaccination X as per schedule'),
+(3, 3, '2023-02-02 00:00:00', 3, 'Sprained leg', 'Pain Medication', 'Rest recommended for two weeks'),
+(4, 4, '2023-02-15 00:00:00', 1, 'Dental cleaning', 'N/A', 'Completed dental cleaning procedure'),
+(5, 5, '2023-03-10 00:00:00', 4, 'Skin infection', 'Antibiotics', 'Prescribed antibiotics for skin infection'),
+(6, 6, '2023-03-10 00:00:00', 2, 'Flea infestation', 'Flea Treatment', 'Administered flea treatment'),
+(7, 7, '2023-04-12 00:00:00', 1, 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
+(8, 8, '2023-04-18 00:00:00', 5, 'Spaying', 'N/A', 'Successfully performed spaying surgery'),
+(9, 9, '2023-05-02 00:00:00', 4, 'Allergic reaction', 'Antihistamines', 'Allergic reaction due to food prescribed antihistamine'),
+(10, 10, '2023-05-20 00:00:00', 6, 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
