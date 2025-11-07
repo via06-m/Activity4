@@ -19,8 +19,8 @@ CREATE TABLE appointments (
 
 CREATE TABLE doctors (
     doctorid INT PRIMARY KEY,
-    firstname VARCHAR(50),
-    lastname VARCHAR(50),
+    dfirstname VARCHAR(50),
+    dlastname VARCHAR(50),
     specialty VARCHAR(100),
     phone VARCHAR(15),
     email VARCHAR(100)
@@ -44,7 +44,7 @@ CREATE TABLE medical_records (
     FOREIGN KEY (animalid) REFERENCES animals(animalid)
 );
 
-INSERT INTO Owners (ownerid, firstname, lastname, address, phone, email) VALUES
+INSERT INTO Owners (ownerid, ofirstname, olastname, address, phone, email) VALUES
 (1, 'John', 'Doe', '123 Elm St', '555-1234', 'john.doe@example.com'),
 (2, 'Jane', 'Smith', '456 Oak St', '555-5678', 'jane.smith@example.com'),
 (3, 'Emily', 'Johnson', '789 Pine St', '555-8765', 'emily.johnson@example.com'),
@@ -56,7 +56,8 @@ INSERT INTO Owners (ownerid, firstname, lastname, address, phone, email) VALUES
 (9, 'Linda', 'Rodriguez', '369 Aspen St', '555-8642', 'linda.rodriguez@example.com'),
 (10, 'Robert', 'Hernandez', '159 Fir St', '555-9753', 'robert.hernandez@example.com');
 
-INSERT INTO animals (animalid, name, species, breed, age, ownerid) VALUES
+INSERT INTO animals (animalid, name, species, breed, age, ownerid) 
+VALUES
 (1, 'Buddy', 'Dog', 'Golden Retriever', 3, 1),
 (2, 'Mittens', 'Cat', 'Siamese', 2, 2),
 (3, 'Charlie', 'Dog', 'Beagle', 4, 3),
@@ -68,7 +69,8 @@ INSERT INTO animals (animalid, name, species, breed, age, ownerid) VALUES
 (9, 'Jack', 'Dog', 'Poodle', 6, 9),
 (10, 'Bella', 'Cat', 'Ragdoll', 2, 10);
 
-INSERT INTO appointments (appointid, animalid, appointdate, reason) VALUES
+INSERT INTO appointments (appointid, animalid, appointdate, reason) 
+VALUES
 (1, 1, '2023-10-01', 'Routine Checkup'),
 (2, 2, '2023-10-02', 'Vaccination'),
 (3, 3, '2023-10-03', 'Dental Cleaning'),
@@ -79,3 +81,13 @@ INSERT INTO appointments (appointid, animalid, appointdate, reason) VALUES
 (8, 8, '2023-10-08', 'Dental Cleaning'),
 (9, 9, '2023-10-09', 'Skin Allergy'),
 (10, 10, '2023-10-10', 'Ear Infection');
+
+INSERT INTO doctors (doctorid, dfirstname, dlastname, specialty, phone, email)
+VALUES
+(1, 'Dr.Maria', 'Santos', 'General Veterinarian', '987-654-3210', 'maria@example.com'),
+(2, 'Dr.Antonio', 'Gonzales', 'Feline Specialist', '555-123-4567', 'antonio@example.com'),
+(3, 'Dr.Felipe', 'Luna', 'Orthopedic Specialist', '111-222-3333', 'felipe@example.com'),
+(4, 'Dr.Sofia', 'Reyes', 'Dermatology Specialist', '999-888-7777', 'sofia@xample.com'),
+(5, 'Dr.Luis', 'Torres', 'Surgery Specialist', '123-555-7777', 'luis@example.com'),
+(6, 'Dr.Carmen', 'Fernandez', 'Opthalmology Specialist', '333-222-1111', 'carmen@example.com');
+
